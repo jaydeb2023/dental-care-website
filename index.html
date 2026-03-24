@@ -1257,5 +1257,26 @@ function removeTyping(){
 
 function ck(e){if(e.key==='Enter')cs();}
 </script>
+  <script>
+function submitAppt(btn) {
+
+  const data = {
+    name: document.getElementById("f-fname").value + " " + document.getElementById("f-lname").value,
+    phone: document.getElementById("f-phone").value,
+    problem: document.getElementById("f-note").value,
+    preferred_time: document.getElementById("f-slot").value
+  };
+
+  fetch("https://n8n-evynta.onrender.com/webhook/dental-care-support-v2", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  document.getElementById("formSuccess").style.display = "block";
+}
+</script>
 </body>
 </html>
