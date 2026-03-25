@@ -1169,7 +1169,7 @@ function submitAppt(btn){
 
 // ── CHATBOT ──
 let chatOpen=false;
-const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE'; // Replace with your n8n webhook URL
+const WEBHOOK_URL = 'https://n8n-evynta.onrender.com/webhook-test/dental-care-support-v2'; // Replace with your n8n webhook URL
 
 const botReplies={
   'book appointment':`✅ <strong>To Book Your Appointment:</strong><br><br>1️⃣ Fill the <a href="#appointment" style="color:var(--sage)">form on this page</a><br>2️⃣ Call: <strong>+91 90386 01761</strong><br>3️⃣ WhatsApp: <a href="https://wa.me/919038601761" target="_blank" style="color:var(--sage)">Click here</a><br><br>We'll confirm your slot shortly! 😊`,
@@ -1257,26 +1257,6 @@ function removeTyping(){
 
 function ck(e){if(e.key==='Enter')cs();}
 </script>
-  <script>
-function submitAppt(btn) {
 
-  const data = {
-    name: document.getElementById("f-fname").value + " " + document.getElementById("f-lname").value,
-    phone: document.getElementById("f-phone").value,
-    problem: document.getElementById("f-note").value,
-    preferred_time: document.getElementById("f-slot").value
-  };
-
-  fetch("https://n8n-evynta.onrender.com/webhook/dental-care-support-v2", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-
-  document.getElementById("formSuccess").style.display = "block";
-}
-</script>
 </body>
 </html>
